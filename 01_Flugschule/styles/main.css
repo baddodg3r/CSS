@@ -43,9 +43,15 @@
     max-width: 400px;
     margin-top: 50px;
     margin-bottom: 500px;
-    animation: logo-fly-in 4s ease-in-out 0s 1 both, logo-turbulences 7s ease-in-out 4.5s infinite none;
+    animation: repeat-animation 20s infinite;
   }
   
+  @keyframes repeat-animation {
+    0%, 100% {
+      animation: logo-fly-in 4s ease-in-out 0s 1 both, logo-turbulences 7s ease-in-out 4.5s 1 none, fly-away 2s ease-in 12s 1 none;
+    }
+  }
+
   /* Animationen fürs Flugzeug */
   @keyframes logo-fly-in {
     0% {
@@ -70,6 +76,16 @@
     }
     75% {
       transform: translate(0, 3px) scale(1.1);
+    }
+  }
+  @keyframes fly-away {
+    0% {
+        opacity: 0.9;
+        transform: translate(0, 0);
+    }
+    100% {
+        opacity: 0.0;
+        transform: translate(100px)scale(4);
     }
   }
   
