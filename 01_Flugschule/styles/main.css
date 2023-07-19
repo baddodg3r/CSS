@@ -9,13 +9,17 @@
   }
   
   body {
-    
     font-family: 'Dosis', sans-serif;
     color: white;
-    background-image: url("../img/pexels-pixabay-45230.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+    /*
+    background-color: red;
+    background-image: url("../img/pexels-madison-inouye-1831271.jpg"), url("../img/pexels-pixabay-45230.jpg");
+    background-size: 300px 200px, cover;
+    background-repeat: no-repeat, no-repeat;
     background-attachment: fixed;
+    background-position: 100% 0%, 50% 50%;
+    */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(0, 0, 0)80%), linear-gradient(to right, rgba(255, 255, 0, 0.356) 0%, rgba(0, 0, 255, 0.39) 66%, rgba(0, 0, 0, 0.089)100%), url("../img/pexels-madison-inouye-1831271.jpg") 100% 0%/300px 200px no-repeat fixed, url("../img/pexels-pixabay-45230.jpg") 50% 50%/cover no-repeat fixed, red;
   }
 
   .wrapper {
