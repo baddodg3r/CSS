@@ -1,0 +1,40 @@
+/* Media Queries für Smartphones mit kleineren Displays */
+@media only screen and (max-width: 37.5em) {
+    /* Hier kommen Ihre speziellen CSS-Regeln für Smartphones mit kleineren Displays */
+  }
+  
+  /* Media Queries für Smartphones mit größeren Displays (Phablets) */
+  @media only screen and (min-width: 37.5em) {
+    /* Hier kommen Ihre speziellen CSS-Regeln für Smartphones mit größeren Displays */
+  }
+  
+  /* Media Queries für Smartphone-Browser */
+  @media only screen and (max-width: 47.9375em) {
+    /* Hier kommen Ihre speziellen CSS-Regeln für Smartphone-Browser */
+  }
+  
+  /* Media Queries für Tablet-Browser */
+  @media only screen and (min-width: 48em) and (max-width: 63.9375em) {
+    /* Hier kommen Ihre speziellen CSS-Regeln für Tablet-Browser */
+  }
+  
+  /* Media Queries für 1080p Computerbildschirm */
+  @media only screen and (min-width: 64em) and (max-width: 119.9375em) {
+    /* Hier kommen Ihre speziellen CSS-Regeln für 1080p Computerbildschirm */
+  }
+  
+  /* Media Queries für 1440p Computerbildschirm */
+  @media only screen and (min-width: 120em) and (max-width: 159.9375em) {
+    /* Hier kommen Ihre speziellen CSS-Regeln für 1440p Computerbildschirm */
+  }
+  
+  /* Media Queries für WQHD Computerbildschirm */
+  @media only screen and (min-width: 160em) and (max-width: 213.33em) {
+    /* Hier kommen Ihre speziellen CSS-Regeln für WQHD Computerbildschirm */
+  }
+  
+  /* Media Queries für 4k Computerbildschirm */
+  @media only screen and (min-width: 213.375em) {
+    /* Hier kommen Ihre speziellen CSS-Regeln für 4k Computerbildschirm */
+  }
+  
