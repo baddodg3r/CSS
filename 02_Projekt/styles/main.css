@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+.header {
+    height: 40rem;
+    background-image: url("../images/pexels-benjamin-suter-3617500.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
