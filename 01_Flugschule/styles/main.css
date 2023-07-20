@@ -11,15 +11,12 @@
   body {
     font-family: 'Dosis', sans-serif;
     color: white;
-    /*
-    background-color: red;
-    background-image: url("../img/pexels-madison-inouye-1831271.jpg"), url("../img/pexels-pixabay-45230.jpg");
-    background-size: 300px 200px, cover;
+    background-color: black;
+    background-image: radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0.5) 25%, rgba(0,0,0,0.2) 75%), url("../img/pexels-pixabay-45230.jpg");
+    background-size: cover, cover;
     background-repeat: no-repeat, no-repeat;
     background-attachment: fixed;
-    background-position: 100% 0%, 50% 50%;
-    */
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(0, 0, 0)80%), linear-gradient(to right, rgba(255, 255, 0, 0.356) 0%, rgba(0, 0, 255, 0.39) 66%, rgba(0, 0, 0, 0.089)100%), url("../img/pexels-madison-inouye-1831271.jpg") 100% 0%/300px 200px no-repeat fixed, url("../img/pexels-pixabay-45230.jpg") 50% 50%/cover no-repeat fixed, red;
+    background-position: 50% 50%, 50% 50%;
   }
 
   .wrapper {
@@ -94,13 +91,21 @@
     font-weight: bold;
     color: white;
     text-decoration: none;
-    background-color: rgb(135, 111, 96);
+    background-color: rgb(151, 124, 107);
     padding: 10px 20px 10px 20px;
     display: inline-block;
     border-radius: 100000px;
-    transition: background-color 0.5s, color 0.5s;
+    
   }
   
   .button:hover {
-    background-color: rgb(36, 29, 25);
+    background-image: radial-gradient(circle at 50% 50%, rgb(135, 111, 96) 1%, rgb(109, 91, 80) 1%);
+    background-size: 10000% 10000%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    transition: background-size linear 0.25s;
   }  
+  .button:hover:active {
+    transition-duration: 0s;
+    background-size: 100% 100%;
+  }
