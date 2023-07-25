@@ -4,27 +4,12 @@
     box-sizing: border-box;
 }
 
-@font-face {
-    font-family: 'Jost';
-    src: url(../jost/Jost-VariableFont_wght.ttf) format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Jost';
-    src: url(../jost/Jost-Italic-VariableFont_wght.ttf) format('truetype');
-    font-weight: normal;
-    font-style: italic;
-}
-
 html {
     font-size: 100%;
     font-family: 'Jost', sans-serif;
 }
 
 .container {
-    
     width: 75rem;
     margin: 0px auto;
 }
@@ -32,32 +17,35 @@ html {
 .header {
     height: 40rem;
     position: relative;
+
     background-image: linear-gradient(-5.71deg, white 49.9%, transparent 50.1%);
     background-repeat: no-repeat;
     background-position: center 100%;
     background-size: 100vw 10vw;
 }
-
 .header__container {
     position: relative;
 }
 
 .header__background {
     height: 40rem;
-    position: absolute;
+    position: absolute; 
     width: 100vw;
     bottom: 0;
+
     background-image: url("../images/pexels-benjamin-suter-3617500.jpg");
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: 100% auto;
 }
-
 .header__mountains {
-    height: 33vw;
-    position:absolute;
-    width: 100vw;
+    position: absolute;
     bottom: 0;
+
+    /* 2000 pixel breit <=> 100vw */
+    /* ~660 pixel hoch <=> 33vw */
+    width: 100vw;
+    height: 33vw;
 
     background-image: url("../images/pexels-benjamin-suter-3617500-mountains.webp");
     background-repeat: no-repeat;
@@ -67,7 +55,7 @@ html {
 
 .icon {
     fill: currentColor;
-    width: 1em;
+    height: 1em;
     vertical-align: middle;
     position: relative;
     top: -0.075em;
@@ -78,7 +66,6 @@ html {
     display: block;
     float: left;
 }
-
 .navigation__list-item--menu {
     float: right;
     font-size: 3rem;
@@ -87,22 +74,27 @@ html {
 .navigation__list-item-link {
     color: white;
     text-decoration: none;
-    padding: 0.25rem 0.25rem 0.25rem 0.25rem;
+    padding: 0.5rem 0.25rem 0.25rem 0.25rem;
     margin-top: 2rem;
     margin-left: 2rem;
     margin-right: 2rem;
     display: block;
     text-shadow: 0 0 0.5rem black;
 }
-
 .navigation__list-item-link:hover {
-    border-bottom: 0.2rem solid rgb(0,226,156);
-    
+    border-bottom: 0.15rem solid rgb(0, 226, 156);
+}
+.navigation__list-item--menu .navigation__list-item-link {
+    margin-top: 0.4rem;
 }
 
 .navigation__list-item--menu .navigation__list-item-link:hover {
     border-bottom: none;
     color: rgb(200, 200, 200);
+}
+
+.navigation__list-item-link--logo {
+    margin-top: 0.9rem;
 }
 
 .navigation__list-item-link--logo:hover {
@@ -113,23 +105,23 @@ html {
 .navigation__list-item-logo {
     width: 4rem;
     height: 4rem;
+}
+.navigation__list-item-logo {
     fill: currentColor;
 }
 
 .header__heading-container {
     clear: both;
 }
-
 .header__heading-main {
     padding-top: 5rem;
+    line-height: 92%;
     font-size: 7rem;
     text-align: center;
-    line-height: 92%;
     color: white;
     text-transform: uppercase;
     text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
 }
-
 .header__heading-sub {
     margin-top: 1rem;
     font-size: 1.5rem;
@@ -137,5 +129,5 @@ html {
     text-align: center;
     color: white;
     text-transform: uppercase;
-    text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 0.5rem black;
 }
