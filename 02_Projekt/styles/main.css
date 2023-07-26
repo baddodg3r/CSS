@@ -1,3 +1,20 @@
+@font-face {
+    font-family: "Jost";
+    font-weight: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("../jost/Jost-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Jost";
+    font-style: italic;
+    font-weight: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("../jost/Jost-Italic-VariableFont_wght.ttf") format("truetype");
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -190,6 +207,7 @@ html {
     clear: both;
 }
 .header__heading-main {
+    font-weight: 700;
     padding-top: 5rem;
     line-height: 92%;
     font-size: 7rem;
@@ -197,6 +215,27 @@ html {
     color: white;
     text-transform: uppercase;
     text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+
+    animation-name: header__heading-main-font-weight;
+    animation-delay: 0.75s;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+
+}
+
+@keyframes header__heading-main-font-weight {
+    0% {
+        transform: translateY(100px);
+        filter: blur(1.5rem);
+        opacity: 0;
+        font-weight: 100;
+    }
+    100% {
+        filter: blur(0);
+        opacity: 1;
+        font-weight: 700;
+    }
 }
 
 /** 992px oder schmaler */
