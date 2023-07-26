@@ -10,6 +10,7 @@ html {
 }
 
 /** Breakpoints */
+/** 1200px oder schmaler */
 @media (max-width: 75em) {
 
 }
@@ -30,21 +31,19 @@ html {
 }
 
 .container {
-    width: 75rem;
+    max-width: 75rem;
     margin: 0px auto;
 }
 
 .header {
     height: 40rem;
-    height: 50vw;
+    min-height: calc(16rem + 38vw);
     position: relative;
     overflow: hidden;
 }
 
-@media (max-width: 135em) {
-    .header {
-        min-height: 42.5vw;
-    }
+@media (max-width: 75em) {
+    .header {height: calc(15rem + 32vw)}
 }
 
 .header__slope {
@@ -91,6 +90,35 @@ html {
     background-size: 100% auto;
 }
 
+/** 1200px oder schmaler */
+@media (max-width: 75em) {
+    .header::before {
+        bottom: -4rem;
+    }
+    .header::after {
+        bottom: -4rem;
+    }
+}
+
+/** 992px oder schmaler */
+@media (max-width: 62em) {
+    .header::before {
+        bottom: -1rem;
+    }
+    .header::after {
+        bottom: -1rem;
+    }
+}
+
+@media (max-width: 36em) {
+    .header::before {
+        background-size: cover;
+    }
+    .header::after {
+        display: none;
+    }
+}
+
 .icon {
     fill: currentColor;
     height: 1em;
@@ -104,6 +132,16 @@ html {
     display: block;
     float: left;
 }
+
+
+/** 992px oder schmaler */
+@media (max-width: 62em) {
+    .navigation__list-item--mobile-hidden {
+        display: none;
+    }
+}
+
+
 .navigation__list-item--menu {
     float: right;
     font-size: 3rem;
@@ -160,6 +198,20 @@ html {
     text-transform: uppercase;
     text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
 }
+
+/** 992px oder schmaler */
+@media (max-width: 62em) {
+    .header__heading-main {
+        font-size: 5rem;
+    }
+}
+
+@media (max-width: 48em) {
+    .header__heading-main {
+        font-size: 3rem;
+    }
+}
+
 .header__heading-sub {
     margin-top: 1rem;
     font-size: 1.5rem;
@@ -170,4 +222,10 @@ html {
     text-shadow: 0 0 0.5rem black;
     position: relative;
     z-index: 1;
+}
+
+@media (max-width: 48em) {
+    .header__heading-sub {
+        font-size: 1rem;
+    }
 }
