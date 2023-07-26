@@ -9,31 +9,9 @@ html {
     font-family: 'Jost', sans-serif;
 }
 
-/** Breakpoints */
-/** 1200px oder schmaler */
-@media (max-width: 75em) {
 
-}
 
-/** 992px oder schmaler */
-@media (max-width: 62em) {
-    
-}
 
-/** 768px oder schmaler */
-@media (max-width: 48em) {
-    
-}
-
-/** 576px oder schmaler */
-@media (max-width: 36em) {
-    
-}
-
-.container {
-    max-width: 75rem;
-    margin: 0px auto;
-}
 
 .header {
     height: 40rem;

@@ -13,6 +13,11 @@
   font-display: swap;
   src: url("../fonts/jost/Jost-Italic-VariableFont_wght.woff2") format("woff2");
 }
+.container {
+  max-width: 75rem;
+  margin: 0px auto;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -24,11 +29,6 @@ html {
   font-family: "Jost", sans-serif;
 }
 
-/** Breakpoints */
-/** 1200px oder schmaler */
-/** 992px oder schmaler */
-/** 768px oder schmaler */
-/** 576px oder schmaler */
 .container {
   max-width: 75rem;
   margin: 0px auto;
@@ -241,4 +241,9 @@ html {
   .header__heading-sub {
     font-size: 1rem;
   }
-}/*# sourceMappingURL=main.css.map */
+}
+/** Breakpoints */
+/** 1200px oder schmaler */
+/** 992px oder schmaler */
+/** 768px oder schmaler */
+/** 576px oder schmaler *//*# sourceMappingURL=main.css.map */
