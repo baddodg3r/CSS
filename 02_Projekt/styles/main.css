@@ -24,12 +24,12 @@
   position: relative;
   overflow: hidden;
 }
-
 @media (max-width: 75em) {
   .header {
     height: calc(15rem + 32vw);
   }
 }
+
 .header__slope {
   position: absolute;
   height: 10vw;
@@ -46,58 +46,49 @@
   position: relative;
 }
 
-.header::before {
-  content: "";
-  position: absolute;
-  width: 100vw;
-  top: 0;
-  bottom: -9rem;
-  background-image: url("../images/pexels-benjamin-suter-3617500.jpg");
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: 100% auto;
-}
-
+.header::before,
 .header::after {
   content: "";
   position: absolute;
-  bottom: 0;
-  /* 2000 pixel breit <=> 100vw */
-  /* ~660 pixel hoch <=> 33vw */
   width: 100vw;
-  height: 33vw;
-  background-image: url("../images/pexels-benjamin-suter-3617500-mountains.webp");
+  bottom: 0;
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: 100% auto;
 }
-
-/** 1200px oder schmaler */
 @media (max-width: 75em) {
-  .header::before {
-    bottom: -4rem;
-  }
+  .header::before,
   .header::after {
     bottom: -4rem;
   }
 }
-/** 992px oder schmaler */
 @media (max-width: 62em) {
-  .header::before {
-    bottom: -1rem;
-  }
+  .header::before,
   .header::after {
     bottom: -1rem;
   }
+}
+
+.header::before {
+  top: 0;
+  background-image: url("../images/pexels-benjamin-suter-3617500.jpg");
 }
 @media (max-width: 36em) {
   .header::before {
     background-size: cover;
   }
+}
+
+.header::after {
+  height: 33vw;
+  background-image: url("../images/pexels-benjamin-suter-3617500-mountains.webp");
+}
+@media (max-width: 36em) {
   .header::after {
     display: none;
   }
 }
+
 .header__heading-container {
   clear: both;
 }
@@ -117,6 +108,16 @@
   animation-timing-function: ease-in-out;
   animation-fill-mode: both;
 }
+@media (max-width: 62em) {
+  .header__heading-main {
+    font-size: 5rem;
+  }
+}
+@media (max-width: 48em) {
+  .header__heading-main {
+    font-size: 3rem;
+  }
+}
 
 @keyframes header__heading-main-font-weight {
   0% {
@@ -131,17 +132,6 @@
     font-weight: 700;
   }
 }
-/** 992px oder schmaler */
-@media (max-width: 62em) {
-  .header__heading-main {
-    font-size: 5rem;
-  }
-}
-@media (max-width: 48em) {
-  .header__heading-main {
-    font-size: 3rem;
-  }
-}
 .header__heading-sub {
   margin-top: 1rem;
   font-size: 1.5rem;
@@ -153,12 +143,12 @@
   position: relative;
   z-index: 1;
 }
-
 @media (max-width: 48em) {
   .header__heading-sub {
     font-size: 1rem;
   }
 }
+
 .navigation__list-item {
   list-style-type: none;
   display: block;
@@ -235,65 +225,6 @@ html {
   vertical-align: middle;
   position: relative;
   top: -0.075em;
-}
-
-.navigation__list-item {
-  list-style-type: none;
-  display: block;
-  float: left;
-}
-
-/** 992px oder schmaler */
-@media (max-width: 62em) {
-  .navigation__list-item--mobile-hidden {
-    display: none;
-  }
-}
-.navigation__list-item--menu {
-  float: right;
-  font-size: 3rem;
-}
-
-.navigation__list-item-link {
-  color: white;
-  text-decoration: none;
-  padding: 0.5rem 0.25rem 0.25rem 0.25rem;
-  margin-top: 2rem;
-  margin-left: 2rem;
-  margin-right: 2rem;
-  display: block;
-  text-shadow: 0 0 0.5rem black;
-}
-
-.navigation__list-item-link:hover {
-  border-bottom: 0.15rem solid rgb(0, 226, 156);
-}
-
-.navigation__list-item--menu .navigation__list-item-link {
-  margin-top: 0.4rem;
-}
-
-.navigation__list-item--menu .navigation__list-item-link:hover {
-  border-bottom: none;
-  color: rgb(200, 200, 200);
-}
-
-.navigation__list-item-link--logo {
-  margin-top: 0.9rem;
-}
-
-.navigation__list-item-link--logo:hover {
-  border-bottom: none;
-  color: rgb(200, 200, 200);
-}
-
-.navigation__list-item-logo {
-  width: 4rem;
-  height: 4rem;
-}
-
-.navigation__list-item-logo {
-  fill: currentColor;
 }
 
 /** Breakpoints */
