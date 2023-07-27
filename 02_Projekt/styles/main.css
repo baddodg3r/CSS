@@ -1,3 +1,8 @@
+/** 1200px oder schmaler */
+/** 992px oder schmaler */
+/** 768px oder schmaler */
+/** 576px oder schmaler */
+/** Breakpoints */
 @font-face {
   font-family: "Jost";
   font-weight: normal;
@@ -215,10 +220,4 @@ html {
   vertical-align: middle;
   position: relative;
   top: -0.075em;
-}
-
-/** Breakpoints */
-/** 1200px oder schmaler */
-/** 992px oder schmaler */
-/** 768px oder schmaler */
-/** 576px oder schmaler *//*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

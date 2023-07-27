@@ -1,10 +1,11 @@
+@use '../abstracts/' as *;
 .header {
     height: 40rem;
     min-height: calc(16rem + 38vw);
     position: relative;
     overflow: hidden;
 
-    @media (max-width: 75em) {
+    @media (max-width: $breakpoint-lg) {
         height: calc(15rem + 32vw)
     }
 }
@@ -38,11 +39,11 @@
     background-position: center bottom;
     background-size: 100% auto;
     
-    @media (max-width: 75em) {
+    @media (max-width: $breakpoint-lg) {
         bottom: -4rem;
     }
 
-    @media (max-width: 62em) {
+    @media (max-width: $breakpoint-md) {
         bottom: -1rem;
     }
     
@@ -53,7 +54,7 @@
     top: 0;
     background-image: url("../images/pexels-benjamin-suter-3617500.jpg");
 
-    @media (max-width: 36em) {
+    @media (max-width: $breakpoint-xs) {
         background-size: cover;
     }
 }
@@ -62,7 +63,7 @@
     height: 33vw;
     background-image: url("../images/pexels-benjamin-suter-3617500-mountains.webp");
 
-    @media (max-width: 36em) {
+    @media (max-width: $breakpoint-xs) {
         display: none;
     }
 }
@@ -86,11 +87,11 @@
     animation-timing-function: ease-in-out;
     animation-fill-mode: both;
 
-    @media (max-width: 62em) {
+    @media (max-width: $breakpoint-md) {
         font-size: 5rem;
     }
 
-    @media (max-width: 48em) {
+    @media (max-width: $breakpoint-sm) {
         font-size: 3rem;
     }
 
@@ -121,7 +122,7 @@
     position: relative;
     z-index: 1;
 
-    @media (max-width: 48em) {
+    @media (max-width: $breakpoint-sm) {
         font-size: 1rem;
     }
 }

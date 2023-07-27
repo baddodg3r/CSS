@@ -1,3 +1,4 @@
+@use "abstracts";
 @use "base";
 @use "layout";
 @use "components";
@@ -15,33 +16,10 @@ html {
     font-family: 'Jost', sans-serif;
 }
 
-
 .icon {
     fill: currentColor;
     height: 1em;
     vertical-align: middle;
     position: relative;
     top: -0.075em;
-}
-
-
-/** Breakpoints */
-/** 1200px oder schmaler */
-@media (max-width: 75em) {
-
-}
-
-/** 992px oder schmaler */
-@media (max-width: 62em) {
-    
-}
-
-/** 768px oder schmaler */
-@media (max-width: 48em) {
-    
-}
-
-/** 576px oder schmaler */
-@media (max-width: 36em) {
-    
 }
