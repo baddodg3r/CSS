@@ -33,6 +33,11 @@ html {
   margin: 0px auto;
   padding: 0 2rem;
 }
+.container::after {
+  display: block;
+  clear: both;
+  content: "";
+}
 @media (max-width: 36em) {
   .container {
     padding: 0 1rem;
@@ -277,7 +282,7 @@ html {
   box-sizing: content-box;
   filter: grayscale(50%);
   transform: scale(1);
-  transition: filter ease-in-out 1s;
+  transition: filter ease-in-out 0.2s, transform ease-in-out 0.2s;
 }
 .motivation__image--first {
   width: 75%;
