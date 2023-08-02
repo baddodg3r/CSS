@@ -1,31 +1,31 @@
-@use"../../abstracts/" as *;
+@use "../../abstracts" as *;
 
 .motivation {
-    margin-top: 3rem;
-    color: $color-secondary;
+    margin-top: 2rem;
 }
 
 .motivation__column-text {
     float: left;
-    width: 33.33%
+    width: 33.33%;
 }
 
 .motivation__text-heading {
     margin-top: 4rem;
+    color: $color-secondary;
     font-weight: 500;
 
     &::before {
-        content:"";
+        content: "";
         display: block;
         width: 3rem;
         height: 0.25rem;
         background-color: $color-secondary-light;
         margin-bottom: 0.5rem;
     }
-    
 }
 
 .motivation__text {
+    color: $color-secondary;
     margin-top: 0.2rem;
 }
 
@@ -35,34 +35,50 @@
     position: relative;
 }
 
+/**
+ * @param $top: Position from top (in rem)
+ * @param $left: Position from left (in %)
+ */
+@mixin motivation__image-position($top, $left) {
+    top: $top;
+    left: $left;
+
+    &:hover {
+        top: $top - 0.66rem;
+        left: calc(#{$left} - 0.66rem);
+    }
+}
+
 .motivation__image {
     width: 50%;
     position: absolute;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5); 
     box-sizing: content-box;
 
     &--first {
-        z-index: 2;
-        width: 37%;
-        top: 10rem;
-        left: 10%;
+        width: 75%;
+        z-index: 1;
+
+        @include motivation__image-position(0rem, 25%);
     }
+
     &--second {
+        width: 37%;
+        z-index: 2;
+
+        @include motivation__image-position(10rem, 10%);
+    }
+
+    &--third {
         z-index: 3;
         width: 42%;
-        top: 5rem;
-        left: 34%;
-        
-    }
-    &--third {
-        width: 75%;
-        right: 0rem;
-        z-index: 1;
-    }
 
+        @include motivation__image-position(5rem, 40%);
+    }
+    
     &:hover {
-        outline: 0.33rem solid $color-primary;
+        border: 0.33rem solid $color-primary;
         padding: 0.33rem;
+        z-index: 10;
     }
-
 }

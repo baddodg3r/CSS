@@ -1,25 +1,6 @@
-@use "abstracts";
 @use "base";
 @use "layout";
 @use "components";
 @use "pages";
 @use "vendors";
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    font-size: 100%;
-    font-family: 'Jost', sans-serif;
-}
-
-.icon {
-    fill: currentColor;
-    height: 1em;
-    vertical-align: middle;
-    position: relative;
-    top: -0.075em;
-}
