@@ -39,6 +39,7 @@
     width: 50%;
     position: absolute;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+    box-sizing: content-box;
 
     &--first {
         z-index: 2;
@@ -47,14 +48,21 @@
         left: 10%;
     }
     &--second {
+        z-index: 3;
         width: 42%;
         top: 5rem;
         left: 34%;
-        z-index: 3;
+        
     }
     &--third {
         width: 75%;
         right: 0rem;
         z-index: 1;
     }
+
+    &:hover {
+        outline: 0.33rem solid $color-primary;
+        padding: 0.33rem;
+    }
+
 }

@@ -250,6 +250,7 @@
   width: 50%;
   position: absolute;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  box-sizing: content-box;
 }
 .motivation__image--first {
   z-index: 2;
@@ -258,15 +259,19 @@
   left: 10%;
 }
 .motivation__image--second {
+  z-index: 3;
   width: 42%;
   top: 5rem;
   left: 34%;
-  z-index: 3;
 }
 .motivation__image--third {
   width: 75%;
   right: 0rem;
   z-index: 1;
+}
+.motivation__image:hover {
+  outline: 0.33rem solid rgb(0, 226, 156);
+  padding: 0.33rem;
 }
 
 * {
