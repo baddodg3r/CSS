@@ -1,11 +1,6 @@
-/** 1200px oder schmaler */
-/** 992px oder schmaler */
-/** 768px oder schmaler */
-/** 576px oder schmaler */
-/** Breakpoints */
 @font-face {
   font-family: "Jost";
-  font-weight: normal;
+  font-style: normal;
   font-weight: 100 900;
   font-display: swap;
   src: url("../fonts/jost/Jost-VariableFont_wght.woff2") format("woff2");
@@ -13,44 +8,61 @@
 @font-face {
   font-family: "Jost";
   font-style: italic;
-  font-weight: normal;
   font-weight: 100 900;
   font-display: swap;
   src: url("../fonts/jost/Jost-Italic-VariableFont_wght.woff2") format("woff2");
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  font-family: "Jost", sans-serif;
+}
+
+/** 1200px oder schmaler */
+/** 992px oder schmaler */
+/** 768px oder schmaler */
+/** 576px oder schmaler */
+/** Breakpoints */
 .container {
   max-width: 75rem;
   margin: 0px auto;
   padding: 0 2rem;
 }
-@media (max-width: 48em) {
+@media (max-width: 36em) {
   .container {
     padding: 0 1rem;
   }
 }
 
 .header {
-  height: 40rem;
-  min-height: calc(16rem + 38vw);
+  height: 35rem;
+  min-height: calc(13rem + 32vw);
   position: relative;
   overflow: hidden;
+  /** 1200px oder schmaler */
 }
 @media (max-width: 75em) {
   .header {
-    height: calc(15rem + 32vw);
+    height: calc(18rem + 32vw);
   }
 }
 
 .header__slope {
   position: absolute;
-  height: 10vw;
-  width: 100vw;
+  left: 0;
+  right: 0;
   bottom: 0;
+  height: 10vw;
+  z-index: 1;
   background-image: linear-gradient(-5.71deg, white 49.9%, transparent 50.1%);
   background-repeat: no-repeat;
   background-position: center 100%;
   background-size: 100vw 10vw;
-  z-index: 1;
 }
 
 .header__container {
@@ -62,10 +74,11 @@
   content: "";
   position: absolute;
   width: 100vw;
-  bottom: 0;
+  bottom: -9rem;
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: 100% auto;
+  /** 1200px oder schmaler */
 }
 @media (max-width: 75em) {
   .header::before,
@@ -91,6 +104,7 @@
 }
 
 .header::after {
+  /* ~660 pixel hoch <=> 33vw */
   height: 33vw;
   background-image: url("../images/pexels-benjamin-suter-3617500-mountains.webp");
 }
@@ -132,13 +146,10 @@
 
 @keyframes header__heading-main-font-weight {
   0% {
-    transform: translateY(100px);
-    filter: blur(1.5rem);
     opacity: 0;
     font-weight: 100;
   }
   100% {
-    filter: blur(0);
     opacity: 1;
     font-weight: 700;
   }
@@ -151,8 +162,8 @@
   color: white;
   text-transform: uppercase;
   text-shadow: 0 0 0.5rem black;
-  position: relative;
   z-index: 1;
+  position: relative;
 }
 @media (max-width: 48em) {
   .header__heading-sub {
@@ -213,9 +224,16 @@
   fill: currentColor;
 }
 
+.icon {
+  fill: currentColor;
+  height: 1em;
+  vertical-align: middle;
+  position: relative;
+  top: -0.075em;
+}
+
 .motivation {
-  margin-top: 3rem;
-  color: #26464d;
+  margin-top: 2rem;
 }
 
 .motivation__column-text {
@@ -225,6 +243,7 @@
 
 .motivation__text-heading {
   margin-top: 4rem;
+  color: #26464d;
   font-weight: 500;
 }
 .motivation__text-heading::before {
@@ -237,6 +256,7 @@
 }
 
 .motivation__text {
+  color: #26464d;
   margin-top: 0.2rem;
 }
 
@@ -246,49 +266,53 @@
   position: relative;
 }
 
+/**
+ * @param $top: Position from top (in rem)
+ * @param $left: Position from left (in %)
+ */
 .motivation__image {
   width: 50%;
   position: absolute;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
   box-sizing: content-box;
+  filter: grayscale(50%);
+  transform: scale(1);
+  transition: filter ease-in-out 1s;
 }
 .motivation__image--first {
-  z-index: 2;
+  width: 75%;
+  z-index: 1;
+  top: 0rem;
+  left: 25%;
+}
+.motivation__image--first:hover {
+  top: -0.66rem;
+  left: calc(25% - 0.66rem);
+}
+.motivation__image--second {
   width: 37%;
+  z-index: 2;
   top: 10rem;
   left: 10%;
 }
-.motivation__image--second {
+.motivation__image--second:hover {
+  top: 9.34rem;
+  left: calc(10% - 0.66rem);
+}
+.motivation__image--third {
   z-index: 3;
   width: 42%;
   top: 5rem;
-  left: 34%;
+  left: 40%;
 }
-.motivation__image--third {
-  width: 75%;
-  right: 0rem;
-  z-index: 1;
+.motivation__image--third:hover {
+  top: 4.34rem;
+  left: calc(40% - 0.66rem);
 }
 .motivation__image:hover {
-  outline: 0.33rem solid rgb(0, 226, 156);
+  filter: grayscale(0%);
+  transform: scale(1.05);
+  border: 0.33rem solid rgb(0, 226, 156);
   padding: 0.33rem;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 100%;
-  font-family: "Jost", sans-serif;
-}
-
-.icon {
-  fill: currentColor;
-  height: 1em;
-  vertical-align: middle;
-  position: relative;
-  top: -0.075em;
+  z-index: 10;
 }/*# sourceMappingURL=main.css.map */
