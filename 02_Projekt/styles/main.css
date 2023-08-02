@@ -363,4 +363,8 @@ html {
   border: 0.33rem solid rgb(0, 226, 156);
   padding: 0.33rem;
   z-index: 10;
+}
+
+.tours {
+  background-color: #011820;
 }/*# sourceMappingURL=main.css.map */
