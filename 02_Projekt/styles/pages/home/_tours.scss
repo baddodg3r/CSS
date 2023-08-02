@@ -1,5 +1,49 @@
 @use "../../abstracts" as *;
 
+$-tours-background-color: $color-secondary-dark;
+
 .tours {
-    background-color: $color-secondary-dark;
+    background-color: $-tours-background-color;
+    height: 30rem;
+    position: relative;
+}
+
+%tours__before-and-after {
+    top: 0;
+    position: absolute;
+    content: "Tame the Wild";
+    text-transform: uppercase;
+    color: $-tours-background-color;
+    font-size: 10rem;
+    text-shadow: 0 0 0.1rem white;
+}
+
+.tours::before {
+    @extend %tours__before-and-after;
+
+    @supports (-webkit-text-stroke: 1px white) or (text-stroke: 1px white) {
+        -webkit-text-stroke: 1px white;
+        text-stroke: 1px white;
+        text-shadow: none;
+    }
+}
+
+.tours::after {
+    @extend %tours__before-and-after;
+
+    @supports (-webkit-text-stroke: 1px white) or (text-stroke: 1px white) {
+        -webkit-text-stroke: 1px transparent;
+        text-stroke: 1px transparent;
+        text-shadow: none;
+    }
+}
+
+.tours__heading {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-align: center;
+    padding-top: 4rem;
+
 }
