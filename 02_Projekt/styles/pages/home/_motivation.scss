@@ -1,5 +1,8 @@
 @use "../../abstracts" as *;
 
+$-motivation__image-hover-padding: 0.33rem;
+$-motivation__image-hover-border: 0.33rem;
+
 .motivation {
     margin-top: 2rem;
 }
@@ -7,12 +10,18 @@
 .motivation__column-text {
     float: left;
     width: 33.33%;
+    padding-right: 4.5rem;
+
+    @media (max-width: $breakpoint-lg) {
+        padding-right: 3rem;
+    }
 }
 
 .motivation__text-heading {
     margin-top: 4rem;
     color: $color-secondary;
     font-weight: 500;
+    font-size: 2rem;
 
     &::before {
         content: "";
@@ -27,6 +36,7 @@
 .motivation__text {
     color: $color-secondary;
     margin-top: 0.2rem;
+    font-size: 1.1rem;
 }
 
 .motivation__column-images {
@@ -44,9 +54,11 @@
     top: $top;
     left: $left;
 
+    $hover-offset: $-motivation__image-hover-border + $-motivation__image-hover-padding;
+
     &:hover {
-        top: $top - 0.66rem;
-        left: calc(#{$left} - 0.66rem);
+        top: $top - $hover-offset;
+        left: calc(#{$left} - $hover-offset);
     }
 }
 
@@ -83,8 +95,8 @@
     &:hover {
         filter: grayscale(0%);
         transform: scale(1.05);
-        border: 0.33rem solid $color-primary;
-        padding: 0.33rem;
+        border: $-motivation__image-hover-border solid $color-primary;
+        padding: $-motivation__image-hover-padding;
         z-index: 10;
     }
 }
