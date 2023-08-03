@@ -62,13 +62,21 @@ $-tours-animation-duration: 0.25s;
     position: relative;
     height: 21rem;
     overflow: hidden;
+    box-shadow: 0 0 1rem transparent;
 
     transform: scale(1);
-    transition: transform $-tours-animation-duration ease-in-out;
+    transition: transform $-tours-animation-duration ease-in-out, box-shadow $-tours-animation-duration ease-in-out, z-index $-tours-animation-duration linear;
+
+    z-index: 0;
 
     &:hover {
         transform: scale(1.1);
-        box-shadow: 0 0 0.25rem black;
+        box-shadow: 0 0 1rem black;
+        transition: transform $-tours-animation-duration ease-in-out,
+        box-shadow $-tours-animation-duration ease-in-out,
+        z-index 0s linear;
+
+        z-index: 1000;
     }
 }
 
@@ -79,6 +87,7 @@ $-tours-animation-duration: 0.25s;
     letter-spacing: 0.1em;
     text-align: center;
     padding-top: 4rem;
+    padding-bottom: 4rem;
     
 
 }
