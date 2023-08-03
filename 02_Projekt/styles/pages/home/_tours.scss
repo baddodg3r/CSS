@@ -164,12 +164,14 @@ $-tours-animation-duration: 0.25s;
     margin-bottom: 0.25rem;
     white-space: nowrap;
     text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .tours__card-location {
     display: flex;
     font-size: 0.9rem;
     margin-bottom: 0.6rem;
+    
 }
 
 .tours__card-location-icon {
@@ -179,6 +181,9 @@ $-tours-animation-duration: 0.25s;
 .tours__card-location-text {
     line-height: 1.9rem;
     padding-left: 0.15rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .tours__card-desc {

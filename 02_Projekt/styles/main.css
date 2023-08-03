@@ -528,6 +528,7 @@ html {
   margin-bottom: 0.25rem;
   white-space: nowrap;
   text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .tours__card-location {
@@ -543,6 +544,9 @@ html {
 .tours__card-location-text {
   line-height: 1.9rem;
   padding-left: 0.15rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .tours__card-desc {
