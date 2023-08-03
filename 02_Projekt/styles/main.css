@@ -382,7 +382,7 @@ html {
 .tours {
   background-color: #011820;
   position: relative;
-  padding-bottom: 5rem;
+  padding-bottom: 8.5rem;
 }
 
 .tours::after, .tours::before {
@@ -504,6 +504,7 @@ html {
   width: 3rem;
   color: white;
   display: block;
+  filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.5));
 }
 
 .tours__card-content {
@@ -525,6 +526,8 @@ html {
 .tours__card-heading {
   font-size: 1.1rem;
   margin-bottom: 0.25rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .tours__card-location {

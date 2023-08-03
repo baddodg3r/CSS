@@ -8,7 +8,7 @@ $-tours-animation-duration: 0.25s;
 .tours {
     background-color: $-tours-background-color;
     position: relative;
-    padding-bottom: 5rem;
+    padding-bottom: 8.5rem;
 }
 
 %tours__before-and-after {
@@ -136,6 +136,8 @@ $-tours-animation-duration: 0.25s;
     width: $-tours-icon-size;
     color: white;
     display: block;
+
+    filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.5));
 }
 
 .tours__card-content {
@@ -160,6 +162,8 @@ $-tours-animation-duration: 0.25s;
 .tours__card-heading {
     font-size: 1.1rem;
     margin-bottom: 0.25rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .tours__card-location {
