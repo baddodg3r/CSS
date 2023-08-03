@@ -2,6 +2,9 @@
 
 $-tours-background-color: $color-secondary-dark;
 
+$-tours-icon-size: 3rem;
+$-tours-animation-duration: 0.25s;
+
 .tours {
     background-color: $-tours-background-color;
     position: relative;
@@ -59,6 +62,14 @@ $-tours-background-color: $color-secondary-dark;
     position: relative;
     height: 21rem;
     overflow: hidden;
+
+    transform: scale(1);
+    transition: transform $-tours-animation-duration ease-in-out;
+
+    &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 0.25rem black;
+    }
 }
 
 .tours__heading {
@@ -78,11 +89,12 @@ $-tours-background-color: $color-secondary-dark;
     top: 0;
     left: 0;
     width: 100%;
-    height: 3rem;
+    height: $-tours-icon-size;
+    box-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.25);
 
-    transform: translate(calc(-100% + 3rem), 0);
+    transform: translate(calc(-100% + #{$-tours-icon-size}), 0);
 
-    transition: transform 1s ease-in-out;
+    transition: transform $-tours-animation-duration ease-in-out;
 
     .tours__card:hover & {
         transform: translate(0,0);
@@ -97,14 +109,24 @@ $-tours-background-color: $color-secondary-dark;
     filter: brightness(80%);
 }
 
-.tours__card-icon {
+.tours__card-icon-container {
     position: absolute;
     top: 0;
     left: 0;
-    width: 3rem;
+    width: 100%;
+
+    transform: translate(0, 0);
+    transition: transform $-tours-animation-duration ease-in-out;
+
+    .tours__card:hover & {
+        transform: translate(calc(50% - #{$-tours-icon-size} / 2), 0);
+    }
+}
+
+.tours__card-icon {
+    width: $-tours-icon-size;
     color: white;
     display: block;
-    
 }
 
 .tours__card-content {
@@ -117,6 +139,13 @@ $-tours-background-color: $color-secondary-dark;
     padding: 3rem 1rem 0 1rem;
     text-shadow: 0 0 0.125rem black;
     background-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.25) 20%);
+
+    transition: transform $-tours-animation-duration ease-in-out;
+    transform: translate(0, calc(100% - 7.25rem));
+
+    .tours__card:hover & {
+        transform: translate(0, 0);
+    }
 }
 
 .tours__card-heading {
