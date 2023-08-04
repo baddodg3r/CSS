@@ -250,6 +250,35 @@ html {
   top: -0.075em;
 }
 
+.button {
+  display: inline-block;
+  border: 0.125rem solid currentColor;
+  color: rgb(0, 226, 156);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 1rem 6rem;
+  border-radius: 10000rem;
+}
+.button:hover {
+  color: #1cffb9;
+}
+
+.button--white {
+  color: white;
+  text-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.5);
+}
+.button--white:hover {
+  color: rgb(230, 230, 230);
+}
+
+.button--background-blur {
+  -webkit-backdrop-filter: blur(3rem);
+  backdrop-filter: blur(3rem);
+}
+
 .motivation {
   margin-top: 2rem;
   padding-bottom: 3rem;
@@ -575,6 +604,15 @@ html {
   top: 0;
   width: 100%;
 }
+@supports ((-o-object-fit: cover) or (object-fit: cover)) {
+  .story__video {
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center center;
+       object-position: center center;
+  }
+}
 
 .story__video-colorize {
   position: absolute;
@@ -610,6 +648,7 @@ html {
   font-weight: 500;
   letter-spacing: 0.1rem;
   text-align: center;
+  text-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.5);
   padding-top: 4rem;
   padding-bottom: 4rem;
   font-size: 2rem;
@@ -619,14 +658,24 @@ html {
   max-width: 40rem;
   margin: 0 auto;
   color: white;
+  text-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.5);
   -moz-column-count: 2;
        column-count: 2;
   -moz-column-gap: 4rem;
        column-gap: 4rem;
   -moz-column-rule: 0.125rem solid rgba(255, 255, 255, 0.5);
        column-rule: 0.125rem solid rgba(255, 255, 255, 0.5);
+  text-align: justify;
+}
+@media (max-width: 48em) {
+  .story__desc {
+    -moz-column-count: 1;
+         column-count: 1;
+    text-align: left;
+  }
 }
 
 .story__book {
   text-align: center;
+  padding: 4rem 0 4rem 0;
 }/*# sourceMappingURL=main.css.map */

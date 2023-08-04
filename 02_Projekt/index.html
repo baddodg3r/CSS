@@ -316,8 +316,12 @@
             
         </section>
         <section class="story">
-            <video class="story__video" autoplay muted loop>
-                <source type="video/mp4" src="videos/production_ID_4328534.mp4">
+            <video id="bgVideo" class="story__video">
+                <!--
+                <source type="video/webm" src="videos/pexels_4476816.webm">
+                <source type="video/mp4" src="videos/pexels_4476816.mp4">
+                <source type="video/ogg" src="videos/pexels_4476816.ogv">
+                -->
             </video>
             <div class="story__video-colorize">
             </div>
@@ -329,12 +333,42 @@
                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
                 </div>
                 <div class="story__book">
-                    <a class="button button--white" href="#">Book now</a>
+                    <a class="button button--white button--background-blur" href="#">Book now</a>
                 </div>
             </div>
         </section>
 
         <!--BUG FIX für Chrome - JavaScript nicht entfernen!-->
         <script> </script>
+        <script>
+            var videoPlayer = document.getElementById("bgVideo");
+            
+            var videoList = [
+              "videos/flug2.mp4",
+              "videos/pexels_4476816.mp4",
+              "videos/production_ID_4328534.mp4"
+            ];
+            
+            var currentIndex = 0;
+            
+            function playVideo() {
+              videoPlayer.src = videoList[currentIndex];
+              videoPlayer.play();
+            }
+            
+            playVideo();  // Beginne mit dem ersten Video in der Liste
+            
+            videoPlayer.onended = function() {
+              currentIndex++;
+              
+              // Wenn das Ende der Liste erreicht ist, wieder zum Anfang zurückkehren
+              if (currentIndex >= videoList.length) {
+                currentIndex = 0;
+              }
+              
+              playVideo();
+            };
+        </script>
+        <script src="scripts/main.js" async></script>
     </body>
 </html>

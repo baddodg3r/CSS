@@ -15,6 +15,12 @@
     top: 0;
     width: 100%;
 
+    @supports (object-fit: cover) {
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+
 }
 
 .story__video-colorize {
@@ -41,20 +47,31 @@
     font-weight: 500;
     letter-spacing: 0.1rem;
     text-align: center;
+    text-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.5);
     padding-top: 4rem;
     padding-bottom: 4rem;
     font-size: 2rem;
+    
 }
 
 .story__desc {
     max-width: 40rem;
     margin: 0 auto;
     color: white;
+    text-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.5);
+
     column-count: 2;
     column-gap: 4rem;
     column-rule: 0.125rem solid rgba(255, 255, 255, 0.5);
+    text-align:justify;
+
+    @media (max-width: $breakpoint-sm) {
+        column-count: 1;
+        text-align: left;
+    }
 }
 
 .story__book {
     text-align: center;
+    padding: 4rem 0 4rem 0;
 }
