@@ -19,11 +19,13 @@ $-tours-animation-duration: 0.25s;
     content: "Tame the Wild";
     text-transform: uppercase;
     color: $-tours-background-color;
-    font-size: 10rem;
+    font-size: min(calc(100vw / 9), 10rem);
     font-weight: bold;
     text-align: center;
     text-shadow: 0 0 0.1rem white;
     z-index: 0;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .tours::before {
@@ -55,11 +57,14 @@ $-tours-animation-duration: 0.25s;
 
 .tours__cards {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .tours__card {
-    width: 20%;
+    flex: 0 0 (71rem / 5);
     position: relative;
+    margin-top: 1.75rem;
     height: 21rem;
     overflow: hidden;
     box-shadow: 0 0 1rem transparent;
@@ -87,7 +92,7 @@ $-tours-animation-duration: 0.25s;
     letter-spacing: 0.1em;
     text-align: center;
     padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-bottom: 1rem;
     
 
 }
