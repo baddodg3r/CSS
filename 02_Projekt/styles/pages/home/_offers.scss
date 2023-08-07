@@ -1,4 +1,8 @@
 @use "../../abstracts" as *;
+@use "sass:math";
+@use "sass:color";
+
+$border-width: math.div(1rem, 16);
 
 .offers {
     background-color: rgb(240, 240, 240);
@@ -6,18 +10,42 @@
 }
 
 .offers__container {
-    @include make-container();
     display: flex;
     padding-top: 4rem;
     padding-bottom: 4rem;
-
+    margin-left: -0.66rem;
+    margin-right: -0.66rem;
     
 }
 
 .offers__card {
     flex: 1 0 0px;
     margin: 0 0.66rem;
+    padding: 2rem 1rem;
     background-color: white;
     box-shadow: 0.5rem 0.5rem 2rem black;
-    border-bottom: 0.75rem solid $color-primary;
+    border-left: math.div(1rem, 16) solid #e2e2e2;
+    border-right: math.div(1rem, 16) solid #e2e2e2;
+    border-top: math.div(1rem, 16) solid #e2e2e2;
+
+    position: relative;
+
+    
+}
+
+.offers__card::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: - math.div(1rem, 16);
+    right: - math.div(1rem, 16);
+    height: 0.75rem;
+    background-color: $color-primary;
+    border-left: math.div(1rem, 16) solid color.scale($color-primary, $saturation: -50%, $lightness: 25%);
+    border-right: math.div(1rem, 16) solid color.scale($color-primary, $saturation: -50%, $lightness: 25%);
+}
+
+.offers__image {
+    width: 100%;
 }
