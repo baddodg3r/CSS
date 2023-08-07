@@ -279,6 +279,17 @@ html {
   color: rgb(230, 230, 230);
 }
 
+.button--secondary {
+  color: white;
+  background-color: #26464d;
+  border: 0.125rem solid #26464d;
+}
+.button--secondary:hover {
+  color: white;
+  background-color: #011820;
+  border: 0.125rem solid #26464d;
+}
+
 .motivation {
   margin-top: 2rem;
   padding-bottom: 3rem;
@@ -700,9 +711,9 @@ html {
 .offers__card {
   flex: 1 0 0px;
   margin: 0 0.66rem;
-  padding: 0 0 1.5rem 0;
+  padding: 0 0 2rem 0;
   background-color: white;
-  box-shadow: 0.5rem 0.5rem 2rem black;
+  box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.5);
   border-left: 0.0625rem solid rgba(0, 0, 0, 0.15);
   border-right: 0.0625rem solid rgba(0, 0, 0, 0.15);
   border-top: 0.0625rem solid rgba(0, 0, 0, 0.15);
@@ -759,4 +770,57 @@ html {
   width: 100%;
   filter: grayscale(100%);
   mix-blend-mode: multiply;
+}
+
+.offers__content {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.offers__content-heading {
+  color: #26464d;
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+
+.offers__content-subheading {
+  color: rgb(0, 226, 156);
+  font-size: 1rem;
+}
+
+.offers__content-info {
+  margin-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  display: flex;
+  background-image: linear-gradient(90deg, transparent calc(50% - 0.03125rem), rgba(0, 0, 0, 0.15) calc(50% - 0.03125rem), rgba(0, 0, 0, 0.15) calc(50% + 0.03125rem), transparent calc(50% + 0.03125rem));
+  background-repeat: no-repeat;
+  background-size: 100% 75%;
+  background-position: center center;
+}
+
+.offers__content-info-level, .offers__content-info-duration {
+  flex: 1 1 50%;
+  color: #26464d;
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.offers__content-info-duration-text {
+  padding-left: 0.25rem;
+}
+
+.offers__content-price-container {
+  padding-top: 0.75rem;
+  font-size: 1rem;
+  color: #26464d;
+}
+
+.offers__content-price {
+  display: block;
+  color: rgb(0, 226, 156);
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 0.9em;
 }/*# sourceMappingURL=main.css.map */
