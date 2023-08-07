@@ -1,8 +1,11 @@
-@use "../../abstracts" as *;
-@use "sass:math";
 @use "sass:color";
+@use "sass:math";
+
+@use "../../abstracts" as *;
+
 
 $-offers-card-border-width: math.div(1rem, 16);
+$-offers-card-border-color: rgba(0, 0, 0, 0.15);
 $-offers-card-margin: 0.66rem;
 
 .offers {
@@ -17,7 +20,6 @@ $-offers-card-margin: 0.66rem;
     padding-bottom: 4rem;
     margin-left: -$-offers-card-margin;
     margin-right: -$-offers-card-margin;
-    
 }
 
 .offers__card {
@@ -26,13 +28,11 @@ $-offers-card-margin: 0.66rem;
     padding: 0;
     background-color: white;
     box-shadow: 0.5rem 0.5rem 2rem black;
-    border-left: $-offers-card-border-width solid #e2e2e2;
-    border-right: $-offers-card-border-width solid #e2e2e2;
-    border-top: $-offers-card-border-width solid #e2e2e2;
+    border-left: $-offers-card-border-width solid $-offers-card-border-color;
+    border-right: $-offers-card-border-width solid $-offers-card-border-color;
+    border-top: $-offers-card-border-width solid $-offers-card-border-color;
 
     position: relative;
-
-    
 }
 
 .offers__card::after {
@@ -49,9 +49,40 @@ $-offers-card-margin: 0.66rem;
 }
 
 .offers__image-container {
-    margin: -$-offers-card-border-width -$-offers-card-border-width 0 -$-offers-card-border-width;
+    position: relative;
+    background-color: $color-primary;
+    margin-top: -$-offers-card-border-width;
+    margin-right: -$-offers-card-border-width;
+    margin-left: -$-offers-card-border-width;
+}
+
+.offers__image-container::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    border-top: $-offers-card-border-width solid $-offers-card-border-color;
+    border-right: $-offers-card-border-width solid $-offers-card-border-color;
+    border-left: $-offers-card-border-width solid $-offers-card-border-color;
+}
+
+.offers__image-container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4rem;
+    background-image: linear-gradient(-$slope-incline, white 49.7%, transparent 50.3%);
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
 }
 
 .offers__image {
     width: 100%;
+    filter: grayscale(100%);
+    mix-blend-mode: multiply;
 }

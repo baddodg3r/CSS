@@ -32,7 +32,6 @@ $-motivation__image-hover-border: 0.33rem;
 }
 
 .motivation__text-heading {
-    
     color: $color-secondary;
     font-weight: 500;
     font-size: 2rem;
@@ -66,8 +65,8 @@ $-motivation__image-hover-border: 0.33rem;
 
     @media (max-width: $breakpoint-sm) {
         width: 80%;
-        margin: 0 auto;
         float: none;
+        margin: 0 auto;
         height: clamp(10rem, calc(40vw + 10rem), 36rem);
     }
 
@@ -77,6 +76,7 @@ $-motivation__image-hover-border: 0.33rem;
     }
 }
 
+
 /**
  * @param $top: Position from top (in rem)
  * @param $left: Position from left (in %)
@@ -85,11 +85,11 @@ $-motivation__image-hover-border: 0.33rem;
     top: $top;
     left: $left;
 
-    $hover-offset: $-motivation__image-hover-border + $-motivation__image-hover-padding;
+    $hover-offset: $-motivation__image-hover-padding + $-motivation__image-hover-border;
 
     &:hover {
         top: $top - $hover-offset;
-        left: calc(#{$left} - $hover-offset);
+        left: calc(#{$left} - #{$hover-offset});
     }
 }
 

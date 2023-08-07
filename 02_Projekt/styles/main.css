@@ -720,9 +720,41 @@ html {
 }
 
 .offers__image-container {
-  margin: -0.125rem -0.0625rem;
+  position: relative;
+  background-color: rgb(0, 226, 156);
+  margin-top: -0.0625rem;
+  margin-right: -0.0625rem;
+  margin-left: -0.0625rem;
+  margin-bottom: 0;
+}
+
+.offers__container::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  border-top: 0.0625rem solid #e2e2e2;
+  border-left: 0.0625rem solid #e2e2e2;
+  border-right: 0.0625rem solid #e2e2e2;
+}
+
+.offers__image-container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4rem;
+  background-image: linear-gradient(-5.7391704773deg, white 49.7%, transparent 50.3%);
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
 }
 
 .offers__image {
   width: 100%;
+  filter: grayscale(100%);
+  mix-blend-mode: multiply;
 }/*# sourceMappingURL=main.css.map */
