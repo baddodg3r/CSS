@@ -64,7 +64,7 @@ html {
   bottom: 0;
   height: 10vw;
   z-index: 1;
-  background-image: linear-gradient(-5.71deg, white 49.9%, transparent 50.1%);
+  background-image: linear-gradient(-5.7391704773deg, white 49.9%, transparent 50.1%);
   background-repeat: no-repeat;
   background-position: center 100%;
   background-size: 100vw 10vw;
@@ -253,16 +253,21 @@ html {
 .button {
   display: inline-block;
   border: 0.125rem solid currentColor;
+  border-radius: 10000rem;
   color: rgb(0, 226, 156);
   text-decoration: none;
+  padding: 1rem 6rem;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 1.2rem;
-  padding: 1rem 6rem;
-  border-radius: 10000rem;
 }
 .button:hover {
   color: #1cffb9;
+}
+
+.button--background-blur {
+  -webkit-backdrop-filter: blur(3rem);
+  backdrop-filter: blur(3rem);
 }
 
 .button--white {
@@ -272,11 +277,6 @@ html {
 }
 .button--white:hover {
   color: rgb(230, 230, 230);
-}
-
-.button--background-blur {
-  -webkit-backdrop-filter: blur(3rem);
-  backdrop-filter: blur(3rem);
 }
 
 .motivation {
@@ -345,8 +345,8 @@ html {
 @media (max-width: 48em) {
   .motivation__column-images {
     width: 80%;
-    margin: 0 auto;
     float: none;
+    margin: 0 auto;
     height: clamp(10rem, 40vw + 10rem, 36rem);
   }
 }
@@ -378,7 +378,7 @@ html {
 }
 .motivation__image--first:hover {
   top: -0.66rem;
-  left: calc(25% - $hover-offset);
+  left: calc(25% - 0.66rem);
 }
 .motivation__image--second {
   width: 37%;
@@ -388,7 +388,7 @@ html {
 }
 .motivation__image--second:hover {
   top: 9.34rem;
-  left: calc(10% - $hover-offset);
+  left: calc(10% - 0.66rem);
 }
 .motivation__image--third {
   z-index: 3;
@@ -398,7 +398,7 @@ html {
 }
 .motivation__image--third:hover {
   top: 4.34rem;
-  left: calc(40% - $hover-offset);
+  left: calc(40% - 0.66rem);
 }
 .motivation__image:hover {
   filter: grayscale(0%);
@@ -415,34 +415,34 @@ html {
 }
 
 .tours::after, .tours::before {
+  bottom: 0;
   left: 0;
   right: 0;
-  bottom: 0;
   position: absolute;
-  content: "Tame the Wild";
+  content: "Tame the wild";
   text-transform: uppercase;
   color: #011820;
   font-size: min(11.1111111111vw, 10rem);
   font-weight: bold;
+  text-shadow: 0 0 1px white;
   text-align: center;
-  text-shadow: 0 0 0.1rem white;
   z-index: 0;
   overflow: hidden;
   white-space: nowrap;
 }
 
-@supports (-webkit-text-stroke: 1px rgba(255, 255, 255, 0.2)) or (text-stroke: 1px rgba(255, 255, 255, 0.2)) {
+@supports (-webkit-text-stroke: 2px rgba(255, 255, 255, 0.2)) or (text-stroke: 2px rgba(255, 255, 255, 0.2)) {
   .tours::before {
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
-    text-stroke: 1px rgba(255, 255, 255, 0.2);
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.2);
+    text-stroke: 2px rgba(255, 255, 255, 0.2);
     text-shadow: none;
   }
 }
 
-@supports (-webkit-text-stroke: 1px transparent) or (text-stroke: 1px transparent) {
+@supports (-webkit-text-stroke: 2px transparent) or (text-stroke: 2px transparent) {
   .tours::after {
-    -webkit-text-stroke: 1px transparent;
-    text-stroke: 1px transparent;
+    -webkit-text-stroke: 2px transparent;
+    text-stroke: 2px transparent;
     text-shadow: none;
   }
 }
@@ -465,6 +465,17 @@ html {
   }
 }
 
+.tours__heading {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-align: center;
+  padding-top: 4rem;
+  padding-bottom: 1rem;
+  font-size: 2rem;
+}
+
 .tours__cards {
   display: flex;
   flex-wrap: wrap;
@@ -474,7 +485,7 @@ html {
 .tours__card {
   flex: 0 0 14.2rem;
   position: relative;
-  margin-top: 1.75rem;
+  margin-top: 3rem;
   height: 21rem;
   overflow: hidden;
   box-shadow: 0 0 1rem transparent;
@@ -483,20 +494,10 @@ html {
   z-index: 0;
 }
 .tours__card:hover {
-  transform: scale(1.1);
+  transform: scale(1.15);
   box-shadow: 0 0 1rem black;
   transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out, z-index 0s linear;
   z-index: 1000;
-}
-
-.tours__heading {
-  color: white;
-  text-transform: uppercase;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-align: center;
-  padding-top: 4rem;
-  padding-bottom: 1rem;
 }
 
 .tours__card-icon-background {
@@ -506,7 +507,7 @@ html {
   left: 0;
   width: 100%;
   height: 3rem;
-  box-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.5);
   transform: translate(calc(-100% + 3rem), 0);
   transition: transform 0.25s ease-in-out;
 }
@@ -531,7 +532,7 @@ html {
   transition: transform 0.25s ease-in-out;
 }
 .tours__card:hover .tours__card-icon-container {
-  transform: translate(calc(50% - 3rem / 2), 0);
+  transform: translate(calc(50% - 1.5rem), 0);
 }
 
 .tours__card-icon {
@@ -550,8 +551,8 @@ html {
   padding: 3rem 1rem 0 1rem;
   text-shadow: 0 0 0.125rem black;
   background-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.25) 20%);
-  transition: transform 0.25s ease-in-out;
   transform: translate(0, calc(100% - 7.25rem));
+  transition: transform 0.25s ease-in-out;
 }
 .tours__card:hover .tours__card-content {
   transform: translate(0, 0);
@@ -566,9 +567,9 @@ html {
 }
 
 .tours__card-location {
-  display: flex;
   font-size: 0.9rem;
   margin-bottom: 0.6rem;
+  display: flex;
 }
 
 .tours__card-location-icon {
@@ -588,12 +589,13 @@ html {
   padding: 0.9rem 0;
   background-image: linear-gradient(90deg, rgb(0, 226, 156) 60%, transparent 60%);
   background-position-y: top;
-  background-size: 100% 0.125rem;
   background-repeat: no-repeat;
+  background-size: 100% 0.125rem;
 }
 
 .story {
   position: relative;
+  overflow: hidden;
 }
 
 .story__video {
@@ -602,9 +604,10 @@ html {
   left: 0;
   right: 0;
   top: 0;
+  bottom: 0;
   width: 100%;
 }
-@supports ((-o-object-fit: cover) or (object-fit: cover)) {
+@supports ((-o-object-fit: cover) or (object-fit: cover)) and ((-o-object-position: center center) or (object-position: center center)) {
   .story__video {
     height: 100%;
     -o-object-fit: cover;
@@ -646,12 +649,12 @@ html {
   color: white;
   text-transform: uppercase;
   font-weight: 500;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.1em;
   text-align: center;
-  text-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.5);
   padding-top: 4rem;
   padding-bottom: 4rem;
   font-size: 2rem;
+  text-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.5);
 }
 
 .story__desc {
@@ -700,9 +703,9 @@ html {
   padding: 0;
   background-color: white;
   box-shadow: 0.5rem 0.5rem 2rem black;
-  border-left: 0.0625rem solid #e2e2e2;
-  border-right: 0.0625rem solid #e2e2e2;
-  border-top: 0.0625rem solid #e2e2e2;
+  border-left: 0.0625rem solid rgba(0, 0, 0, 0.15);
+  border-right: 0.0625rem solid rgba(0, 0, 0, 0.15);
+  border-top: 0.0625rem solid rgba(0, 0, 0, 0.15);
   position: relative;
 }
 
@@ -725,10 +728,9 @@ html {
   margin-top: -0.0625rem;
   margin-right: -0.0625rem;
   margin-left: -0.0625rem;
-  margin-bottom: 0;
 }
 
-.offers__container::before {
+.offers__image-container::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -736,9 +738,9 @@ html {
   right: 0;
   top: 0;
   z-index: 1;
-  border-top: 0.0625rem solid #e2e2e2;
-  border-left: 0.0625rem solid #e2e2e2;
-  border-right: 0.0625rem solid #e2e2e2;
+  border-top: 0.0625rem solid rgba(0, 0, 0, 0.15);
+  border-right: 0.0625rem solid rgba(0, 0, 0, 0.15);
+  border-left: 0.0625rem solid rgba(0, 0, 0, 0.15);
 }
 
 .offers__image-container::after {
