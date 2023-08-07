@@ -8,8 +8,7 @@ function checkScroll() {
 
         if (visible) {
             video.play();
-        }
-        else {
+        } else {
             video.pause();
         }
     }
