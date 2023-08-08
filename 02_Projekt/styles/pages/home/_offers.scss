@@ -175,6 +175,18 @@ $-width: math.div(100%, 3);
     line-height: 0.9em;
 }
 
+@mixin offers__card-hover-bg($alpha-dt: 0%) {
+    background-image: linear-gradient(90deg, 
+        transparent calc(50% - #{$-half-pixel-width}),
+        rgb(255, 255, 255) calc(50% - #{$-half-pixel-width}),
+        rgb(255, 255, 255) calc(50% + #{$-half-pixel-width}),
+        transparent calc(50% + #{$-half-pixel-width})
+    ), linear-gradient(135deg, 
+        color.scale($color-primary, $alpha: $alpha-dt) 0%, 
+        color.scale($color-primary, $lightness: -20%, $alpha: $alpha-dt) 100%
+    );
+}
+
 .offers__card-hover {
     display: flex;
     opacity: 0;
@@ -189,15 +201,7 @@ $-width: math.div(100%, 3);
     bottom: -$-offers-card-border-width;
 
     background-color: $color-primary;
-    background-image: linear-gradient(90deg, 
-        transparent calc(50% - #{$-half-pixel-width}),
-        rgb(255, 255, 255) calc(50% - #{$-half-pixel-width}),
-        rgb(255, 255, 255) calc(50% + #{$-half-pixel-width}),
-        transparent calc(50% + #{$-half-pixel-width})
-    ), linear-gradient(135deg, 
-        $color-primary 0%, 
-        color.scale($color-primary, $lightness: -20%) 100%
-    );
+    @include offers__card-hover-bg();
     background-repeat: no-repeat, no-repeat;
     background-position: center top, center center;
     background-size: 100% calc(50% - 4rem), 100% 100%;
@@ -235,17 +239,42 @@ $-width: math.div(100%, 3);
     }
 }
 
-.offers__card-container--3d {
+%offers__card-container--3deffect {
     perspective: 50rem;
+
+    .offers__card {
+        transition: transform 0.5s ease-in-out;
+        transform: rotateX(calc(calc(var(--mouse-y, 0.5) - 0.5) * -10deg)) rotateY(calc(calc(var(--mouse-x, 0.5) - 0.5) * 10deg));
+    }
+
+    &:hover .offers__card {
+        transition: transform 0.1s linear;
+    }
+}
+
+.offers__card-container--3d {
+    @extend %offers__card-container--3deffect;
+
     .offers__card-hover{
         display: none;
     }
 
-    .offers__card {
-        transform: rotateX(calc(calc(var(--mouse-y, 0.5) - 0.5) * -20deg)) rotateY(calc(calc(var(--mouse-x, 0.5) - 0.5) * 20deg));
-    }
+    
 }
 
 .offers__card-container--3d-hover {
+    @extend %offers__card-container--3deffect;
+    .offers__card-primary {
+        transform-style: preserve-3d;
+    }
 
+    .offers__card {
+        transform-style: preserve-3d;
+    }
+
+    .offers__card-hover {
+        transform: translateZ(1rem);
+        background-color: transparent;
+
+    }
 }

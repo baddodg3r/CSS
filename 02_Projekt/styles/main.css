@@ -864,7 +864,7 @@ html {
   right: -0.0625rem;
   bottom: -0.0625rem;
   background-color: rgb(0, 226, 156);
-  background-image: linear-gradient(90deg, transparent calc(50% - 0.03125rem), rgb(255, 255, 255) calc(50% - 0.03125rem), rgb(255, 255, 255) calc(50% + 0.03125rem), transparent calc(50% + 0.03125rem)), linear-gradient(135deg, rgb(0, 226, 156) 0%, #00b57d 100%);
+  background-image: linear-gradient(90deg, transparent calc(50% - 0.03125rem), rgb(255, 255, 255) calc(50% - 0.03125rem), rgb(255, 255, 255) calc(50% + 0.03125rem), transparent calc(50% + 0.03125rem)), linear-gradient(135deg, #00e29c 0%, #00b57d 100%);
   background-repeat: no-repeat, no-repeat;
   background-position: center top, center center;
   background-size: 100% calc(50% - 4rem), 100% 100%;
@@ -894,12 +894,28 @@ html {
   backface-visibility: hidden;
 }
 
-.offers__card-container--3d {
+.offers__card-container--3d-hover, .offers__card-container--3d {
   perspective: 50rem;
 }
+.offers__card-container--3d-hover .offers__card, .offers__card-container--3d .offers__card {
+  transition: transform 0.5s ease-in-out;
+  transform: rotateX(calc((var(--mouse-y, 0.5) - 0.5) * -10deg)) rotateY(calc((var(--mouse-x, 0.5) - 0.5) * 10deg));
+}
+.offers__card-container--3d-hover:hover .offers__card, .offers__card-container--3d:hover .offers__card {
+  transition: transform 0.1s linear;
+}
+
 .offers__card-container--3d .offers__card-hover {
   display: none;
 }
-.offers__card-container--3d .offers__card {
-  transform: rotateX(calc((var(--mouse-y, 0.5) - 0.5) * -20deg)) rotateY(calc((var(--mouse-x, 0.5) - 0.5) * 20deg));
+
+.offers__card-container--3d-hover .offers__card-primary {
+  transform-style: preserve-3d;
+}
+.offers__card-container--3d-hover .offers__card {
+  transform-style: preserve-3d;
+}
+.offers__card-container--3d-hover .offers__card-hover {
+  transform: translateZ(1rem);
+  background-color: transparent;
 }/*# sourceMappingURL=main.css.map */
