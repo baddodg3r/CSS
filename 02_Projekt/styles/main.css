@@ -715,9 +715,22 @@ html {
   margin-left: -0.66rem;
 }
 
-.offers__card {
+.offers__card-container {
   width: calc(33.3333333333% - 1.321rem);
   margin: 1.32rem 0.66rem 0 0.66rem;
+}
+@media (max-width: 62em) {
+  .offers__card-container {
+    width: calc(50% - 1.321rem);
+  }
+}
+@media (max-width: 48em) {
+  .offers__card-container {
+    width: calc(100% - 1.321rem);
+  }
+}
+
+.offers__card {
   padding: 0 0 2rem 0;
   background-color: white;
   box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.5);
@@ -725,16 +738,6 @@ html {
   border-right: 0.0625rem solid rgba(0, 0, 0, 0.15);
   border-top: 0.0625rem solid rgba(0, 0, 0, 0.15);
   position: relative;
-}
-@media (max-width: 62em) {
-  .offers__card {
-    width: calc(50% - 1.321rem);
-  }
-}
-@media (max-width: 48em) {
-  .offers__card {
-    width: calc(100% - 1.321rem);
-  }
 }
 
 .offers__card::after {
