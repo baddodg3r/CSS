@@ -911,11 +911,19 @@ html {
 
 .offers__card-container--3d-hover .offers__card-primary {
   transform-style: preserve-3d;
+  filter: blur(0rem);
+  transition: filter 0.5s ease-in-out;
 }
 .offers__card-container--3d-hover .offers__card {
   transform-style: preserve-3d;
 }
 .offers__card-container--3d-hover .offers__card-hover {
   transform: translateZ(1rem);
+  background-image: linear-gradient(90deg, transparent calc(50% - 0.03125rem), rgb(255, 255, 255) calc(50% - 0.03125rem), rgb(255, 255, 255) calc(50% + 0.03125rem), transparent calc(50% + 0.03125rem)), linear-gradient(135deg, rgba(0, 226, 156, 0.5) 0%, rgba(0, 181, 125, 0.5) 100%);
   background-color: transparent;
+  -webkit-backdrop-filter: blur(0.1rem);
+          backdrop-filter: blur(0.1rem);
+}
+.offers__card-container--3d-hover:hover .offers__card-primary {
+  filter: blur(0.1rem);
 }/*# sourceMappingURL=main.css.map */

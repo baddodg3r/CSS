@@ -266,6 +266,8 @@ $-width: math.div(100%, 3);
     @extend %offers__card-container--3deffect;
     .offers__card-primary {
         transform-style: preserve-3d;
+        filter: blur(0rem);
+        transition: filter 0.5s ease-in-out;
     }
 
     .offers__card {
@@ -274,7 +276,13 @@ $-width: math.div(100%, 3);
 
     .offers__card-hover {
         transform: translateZ(1rem);
+        @include offers__card-hover-bg(-50%);
         background-color: transparent;
+        backdrop-filter: blur(0.1rem);
 
+    }
+
+    &:hover .offers__card-primary {
+        filter: blur(0.1rem);
     }
 }
