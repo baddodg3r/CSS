@@ -43,8 +43,24 @@
     }
 }
 
-.gallery__cb-toggle:not(:checked) ~ .gallery__list--cb-toggle {
+
+.gallery__list--cb-toggle {
+    .gallery__cb-toggle:not(:checked) ~ & {
+        display: none;
+    }
+}
+
+.gallery__cb-toggle {
     display: none;
+}
+
+.gallery__more-button-container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    text-align: center;
+    .gallery__cb-toggle:checked ~ & {
+        display: none;
+    }
 }
 
 .gallery__list-item {

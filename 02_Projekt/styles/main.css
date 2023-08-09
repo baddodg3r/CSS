@@ -260,6 +260,7 @@ html {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 1.2rem;
+  cursor: pointer;
 }
 .button:hover {
   color: #1cffb9;
@@ -983,6 +984,19 @@ html {
 }
 
 .gallery__cb-toggle:not(:checked) ~ .gallery__list--cb-toggle {
+  display: none;
+}
+
+.gallery__cb-toggle {
+  display: none;
+}
+
+.gallery__more-button-container {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  text-align: center;
+}
+.gallery__cb-toggle:checked ~ .gallery__more-button-container {
   display: none;
 }
 
