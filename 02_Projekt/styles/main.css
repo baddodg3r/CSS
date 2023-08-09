@@ -987,10 +987,21 @@ html {
   }
 }
 
+.gallery__list--cb-toggle {
+  animation: gallery__list--cb-toggle-show 1s ease-in-out 0s 1;
+}
 .gallery__cb-toggle:not(:checked) ~ .gallery__list--cb-toggle {
   display: none;
 }
 
+@keyframes gallery__list--cb-toggle-show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .gallery__cb-toggle {
   display: none;
 }
