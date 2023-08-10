@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Jost";
   font-style: normal;
@@ -1097,7 +1098,8 @@ html {
   letter-spacing: 0.1em;
   text-align: left;
   font-size: 2rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .about__text {
@@ -1122,4 +1124,16 @@ html {
   shape-outside: circle(50% at 50% 50%);
   float: left;
   margin-right: 2rem;
+}
+
+.about__paragraph {
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.about__quote::before {
+  content: "„";
+}
+.about__quote::after {
+  content: "“";
 }/*# sourceMappingURL=main.css.map */
