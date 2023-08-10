@@ -35,7 +35,7 @@
 }
 
 .about__img {
-    $-img-size: 30rem;
+    $-img-size: 32rem;
     width: $-img-size;
     height: $-img-size;
     object-fit: cover;
@@ -45,6 +45,9 @@
     float: left;
 
     margin-right: 2rem;
+
+    
+
 }
 
 .about__paragraph {
@@ -53,6 +56,7 @@
 }
 
 .about__quote {
+    font-style: italic;
     &::before {
         content: '„';
     }
