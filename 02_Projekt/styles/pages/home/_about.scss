@@ -18,5 +18,9 @@
     height: $-img-size;
     object-fit: cover;
     border-radius: math.div($-img-size, 2);
+    shape-outside: circle(50% at 50% 50%);
+    // clip-path: circle(50% at 50% 50%); <<< dies ist auch möglich!
     float: left;
+
+    
 }

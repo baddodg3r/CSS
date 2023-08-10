@@ -1100,5 +1100,6 @@ html {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 15rem;
+  shape-outside: circle(50% at 50% 50%);
   float: left;
 }/*# sourceMappingURL=main.css.map */
