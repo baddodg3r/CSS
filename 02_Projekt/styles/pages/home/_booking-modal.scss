@@ -1,0 +1,51 @@
+@use "../../abstracts" as *;
+@use "sass:color";
+@use "sass:math";
+
+
+.booking-modal {
+    display: none;
+
+    &:target {
+        display: flex;
+    }
+
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: color.scale($color-secondary-dark, $alpha: -50%);
+    color: white;
+    
+    
+}
+
+.cooking-modal__content {
+    position: relative;
+    width: 40rem;
+    height: 20rem;
+
+    $modal-content-bg: color.scale($color-secondary-light, $alpha: -15%);
+
+    background-image:
+                linear-gradient(#{90deg + $slope-incline}, transparent 32.9%, #{$modal-content-bg} 33.1%),
+                linear-gradient(90deg, transparent 33%, rgba(255, 255, 255, 0.5) 100%), 
+                url("../images/modal/pexels-david-bartus-610293.jpg");
+
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: center center, center center, center 30%;
+    background-size: auto, auto, cover;
+
+}
+
+.booking-modal__close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+
+}
