@@ -392,6 +392,11 @@ html {
   transform: translate(100%, 0%);
 }
 
+.footer__footer-list {
+  list-style-type: none;
+  display: flex;
+}
+
 .icon {
   fill: currentColor;
   height: 1em;
