@@ -55,25 +55,37 @@
 }
 
 .sidenav__nav {
+    border-top: 0.0625rem solid rgb(210, 210, 210);
     margin-top: 3rem;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+    
 
     list-style-type: none;
+
+    &:hover{
+        border-top: 0.0625rem solid $color-secondary;
+    }
 }
 
 .sidenav__nav-link {
     font-size: 1.25rem;
-    padding: 0.5rem 0;
+    padding: 0.5rem 1.5rem;
     display: block;
-    color: rgba(0, 0, 0, 0.75);
+    color: $color-secondary;
     font-weight: 300;
     text-decoration: none;
 
-    transition: color 0.25s ease-in-out, font-weight 0.25s ease-in-out ;
+    
+    border-bottom: 0.0625rem solid rgb(210, 210, 210);
+
+    transition: color 0.25s ease-in-out, font-weight 0.25s ease-in-out, background-color 0.25s ease-in-out;
 
     &:hover {
         color: $color-primary;
         font-weight: 500;
+
+        background-color: $color-secondary-light;
+
+        
+        border-bottom: 0.0625rem solid $color-secondary;
     }
 }
