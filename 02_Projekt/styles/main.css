@@ -1549,19 +1549,40 @@ input, select {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.85);
   color: white;
 }
 .booking-modal:target {
   display: flex;
 }
+.booking-modal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  animation-name: booking-modal--fade-in;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}
 
+@keyframes booking-modal--fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .booking-modal__content {
   position: relative;
   width: 45rem;
   height: 23rem;
   padding-left: 16.875rem;
   background-image: linear-gradient(95.7391704773deg, transparent 32.9%, rgba(64, 118, 130, 0.85) 33.1%), linear-gradient(90deg, transparent 33%, rgba(255, 255, 255, 0.5) 100%), url("../images/modal/pexels-david-bartus-610293.jpg");
+  background-color: rgb(0, 226, 156);
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: center center, center center, center 30%;
   background-size: auto, auto, cover;
