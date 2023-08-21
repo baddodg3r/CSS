@@ -1567,6 +1567,13 @@ input, select {
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
 }
+@supports ((-webkit-backdrop-filter: blur(1rem)) or (backdrop-filter: blur(1rem))) {
+  .booking-modal::before {
+    -webkit-backdrop-filter: blur(1rem);
+            backdrop-filter: blur(1rem);
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
 
 @keyframes booking-modal--fade-in {
   0% {

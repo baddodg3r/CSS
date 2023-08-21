@@ -34,6 +34,12 @@ $-booking-modal-height: 23rem;
         right: 0;
         background-color: rgba(0, 0, 0, 0.85);
 
+        @supports(backdrop-filter: blur(1rem)) {
+            backdrop-filter: blur(1rem);
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+
         animation-name: booking-modal--fade-in;
         animation-duration: 1s;
         animation-timing-function: ease-in-out;
