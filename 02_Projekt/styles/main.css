@@ -444,13 +444,13 @@ input, select {
   left: 0;
   opacity: 0;
   background-color: rgba(0, 0, 0, 0.85);
-  transition: opacity 1s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 }
 @supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
   .sidenav__background {
     -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.2);
   }
 }
 .sidenav__opened:checked ~ .sidenav .sidenav__background {
@@ -482,9 +482,10 @@ input, select {
   width: 15rem;
   max-width: 100vw;
   background-color: rgb(235, 235, 235);
-  transform: translate(100%, 0);
+  box-shadow: 0 0 1rem black;
+  transform: translate(calc(100% + 1rem), 0);
   will-change: transform;
-  transition: transform 1s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 .sidenav__opened:checked ~ .sidenav .sidenav__container {
   transform: translate(0, 0);
