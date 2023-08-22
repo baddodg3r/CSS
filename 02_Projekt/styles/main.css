@@ -13,6 +13,12 @@
   font-display: swap;
   src: url("../fonts/jost/Jost-Italic-VariableFont_wght.woff2") format("woff2");
 }
+/** 1200px oder schmaler */
+/** 992px oder schmaler */
+/** 768px oder schmaler */
+/** 576px oder schmaler */
+/** 400px oder schmaler */
+/** Breakpoints */
 * {
   margin: 0;
   padding: 0;
@@ -23,16 +29,41 @@ html {
   font-size: 100%;
   font-family: "Jost", sans-serif;
 }
+@media (min-width: 100em) {
+  html {
+    font-size: 133%;
+  }
+}
+@media (min-width: 150em) {
+  html {
+    font-size: 166%;
+  }
+}
+@media (min-width: 200em) {
+  html {
+    font-size: 200%;
+  }
+}
+@media (max-width: 25em) {
+  html {
+    font-size: 75%;
+  }
+}
 
 input, select {
   font-family: inherit;
 }
 
-/** 1200px oder schmaler */
-/** 992px oder schmaler */
-/** 768px oder schmaler */
-/** 576px oder schmaler */
-/** Breakpoints */
+::-moz-selection {
+  color: white;
+  background-color: rgba(38, 70, 77, 0.8);
+}
+
+::selection {
+  color: white;
+  background-color: rgba(38, 70, 77, 0.8);
+}
+
 .container {
   max-width: 75rem;
   margin: 0px auto;
@@ -632,7 +663,6 @@ input, select {
   margin: 0.75rem 1rem;
   color: rgb(0, 226, 156);
   text-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
   transform-origin: 0% 50%;
   transform: scale(1) translate(0, 0);
   will-change: transform;
@@ -893,7 +923,7 @@ input, select {
 }
 
 .tours__card {
-  flex: 0 0 14.2rem;
+  flex: 0 0 20%;
   position: relative;
   margin-top: 3rem;
   height: 21rem;
@@ -902,6 +932,11 @@ input, select {
   transform: scale(1);
   transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out, z-index 0.25s linear;
   z-index: 0;
+}
+@media (max-width: 75em) {
+  .tours__card {
+    flex: 0 0 14.2rem;
+  }
 }
 .tours__card:hover {
   transform: scale(1.15);
@@ -1703,6 +1738,14 @@ input, select {
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
   animation-fill-mode: both;
+}
+@media (max-width: 36em) {
+  .booking-modal__content {
+    height: 27rem;
+    padding-left: 1rem;
+    background-image: none;
+    background-color: #407682;
+  }
 }
 
 @keyframes booking-modal__content--fade-in {

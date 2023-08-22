@@ -87,6 +87,13 @@ $-booking-modal-height: 23rem;
     animation-timing-function: ease-in-out;
     animation-fill-mode: both;
 
+    @media (max-width: $breakpoint-xs) {
+        height: 27rem;
+        padding-left: 1rem;
+        background-image: none;
+        background-color: $color-secondary-light;
+    }
+
 }
 
 @keyframes booking-modal__content--fade-in {
